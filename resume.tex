@@ -1,0 +1,347 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Md Irfan Chowdhury's CV},
+    pdfauthor={Md Irfan Chowdhury},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifXeTeX
+    \usepackage{fontspec}
+    \IfFontExistsTF{Inter}{
+        \setmainfont{Inter}[
+            UprightFont = * Regular,
+            ItalicFont = * Italic,
+            BoldFont = * Bold,
+            BoldItalicFont = * Bold Italic
+        ]
+    }{
+        \setmainfont{Latin Modern Roman}
+    }
+\else\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+\fi
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for three column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\newcommand{\experienceEntry}[4]{
+    \noindent
+    \begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{0.42\linewidth}@{}}
+        \textbf{#1} & #3 \\
+        \textit{#2} & \textit{#4}
+    \end{tabularx}
+    \par
+}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{25 pt}{25 pt}\selectfont Md Irfan Chowdhury
+
+        \vspace{5 pt}
+
+        \normalsize
+        \mbox{Dhaka, Bangladesh |}%
+        \kern 5.0 pt% \AND\kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{mailto:irfanchowdhury80@gmail.com}{irfanchowdhury80@gmail.com |}}%
+        \kern 5.0 pt% \AND\kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+8801979498634}{+8801979498634}}%
+        \par\vspace{1 pt}
+        \mbox{\hrefWithoutArrow{https://irfan-chowdhury.github.io/}{irfan-chowdhury.github.io |}}%
+        \kern 5.0 pt% \AND\kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/Irfan-Chowdhury}{github.com/Irfan-Chowdhury |}}%
+        \kern 5.0 pt% \AND\kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/irfan-chowdhury}{linkedin.com/in/irfan-chowdhury}}%
+    \end{header}
+
+    \vspace{5 pt - 0.2 cm}
+
+    \section{EXPERIENCES}
+
+    \experienceEntry{Xenarchs (Contractual)}{Software Engineer}{August 2026 - Present}{Remote, Bangladesh}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Developing a \textbf{Cleaning Management System} for an Australian client, implementing service management and booking workflow to streamline customer bookings and reduce manual inquiry handling.
+            \item Designing and implementing scalable architecture for \textbf{booking, referral, wallet, payment, and role-based Customer/Admin management} to support maintainability and future feature expansion.
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.15 cm}
+    \experienceEntry{Workspace Infotech Ltd.}{Software Engineer}{January 2026 - July 2026}{Dhaka, Bangladesh |}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Built high-performance scraping Queue Jobs for \textbf{2M+ vehicle records}, reducing processing time by \textbf{60\%.}
+            \item Built a role-based appointment module that reduced manual access issues by 70\% and streamlined appointment handling.
+            \item Fixed and optimized existing system issues to improve \textbf{application stability and performance}.
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.15 cm}
+    \experienceEntry{Bizsoftcare}{Software Engineer}{October 2024 - December 2025}{Chittagong, Bangladesh}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Collaborated on a scalable e-commerce platform supporting 10K+ users at launch.
+            \item Applied MVC architecture to improve maintainability and scalability.
+            \item Delivered core modules (product, order, payment) for a stable production release.
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.15 cm}
+    \experienceEntry{Lion Coders}{Software Engineer}{January 2022 - September 2024}{Chittagong, Bangladesh}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Developed and maintained multi-tenant SaaS HRM (\href{https://peopleprohrm.com/demo/}{PeoplePro}) and e-commerce (\href{https://shuddhokhamar.com}{Shuddho Khamar}) platforms.
+            \item Contributed to 500+ script sales with 85\% client satisfaction.
+            \item Built Version Elevate package, reducing support load by 60\%.
+            \item Optimized queries and fixed complex issues, achieving 30--70\% performance improvement.
+            \item Integrated local payment gateway bKash on Shuddho Khamar and Max Technology, as well as PayPal, Stripe, and SSLCommerz.
+            \item Actively participated in requirement analysis by thinking from both user and client perspectives to deliver practical and business-oriented solutions.
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{SKILLS}
+    \begin{onecolentry}
+        \textbf{Languages:} PHP, JavaScript, SQL
+    \end{onecolentry}
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \textbf{Technologies \& Tools:} Laravel, MySQL, React, jQuery, Ajax, REST API, Bootstrap, PEST, Git, GitHub, Postman, Trello, Jira, cPanel, Plesk
+    \end{onecolentry}
+
+    \section{PROJECTS}
+    \begin{twocolentry}{\href{https://peopleprohrm.com}{Demo} \textbar\ \href{https://codecanyon.net/item/peoplepro-hrm-payroll-project-management/29169229?s_rank=5}{CodeCanyon}}
+        \textbf{PeoplePro and SaaS}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Led backend development for the restructured payroll module, integrated IP-based attendance, performance tracking, role permissions, and email and database notifications.
+            \item Developed a multi-tenant SaaS version with separate subdomains and databases, improving scalability (\href{https://peopleprohrmsaas.com}{Demo} \textbar\ \href{https://codecanyon.net/item/peoplepro-saas-hrm-payroll-project-management/48966937}{CodeCanyon}).
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.15 cm}
+    \begin{twocolentry}{\href{https://xenarchs.com/cartpro/}{Demo}}
+        \textbf{CartPro}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Improved backend efficiency by reducing query load by 79\%, response time by 59\%, and memory usage by 13\% through refactoring, caching, indexing, and eager loading.
+            \item Built a versatile shopping platform with Ajax cart, quick search, filters, unlimited colors, and secure Stripe, PayPal, COD, and bKash payment gateways.
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.15 cm}
+    \begin{twocolentry}{\href{https://shuddhokhamar.com/}{Demo}}
+        \textbf{Shuddho Khamar}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Contributed to developing an e-commerce platform for agricultural businesses.
+            \item Implemented Slaughtering Service and bKash payment gateway.
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{COMPOSER PACKAGES}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{\href{https://packagist.org/packages/irfan-chowdhury/bkash-tokenized-checkout}{Bkash Tokenized Checkout}} -- Payment gateway solution with Laravel-based application that fits all business needs and enriches the customer's secure online payment experience.
+            \item \textbf{\href{https://packagist.org/packages/irfan-chowdhury/version-elevate}{Version Elevate}} -- Notified clients about new version releases and enabled one-click migration to the latest version, reducing manual upgrade effort by 90\%.
+            \item \textbf{\href{https://packagist.org/packages/irfan-chowdhury/repository-maker}{Laravel Repository Maker}} -- Auto-generate the necessary files for the repository design pattern structure.
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{EDUCATION}
+    \begin{twocolentry}{2017 - 2022}
+        \textbf{International Islamic University Chittagong (IIUC)}, B.Sc. in Computer Science \& Engineering
+    \end{twocolentry}
+
+    \section{TRAINING \& CERTIFICATION}
+    \begin{twocolentry}{October 2023 - March 2024}
+        
+    
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \href{https://drive.google.com/file/d/1t_k2HsfITOH-yVhTBpRSHczNjdDXQhbtK/view?usp=drive_link}{
+            \textbf{Database for Software Developers}, Ostad
+        }
+    \end{onecolentry}
+    \end{twocolentry}
+
+    \vspace{0.15 cm}
+    \begin{twocolentry}{December 2023}
+        
+    
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \href{https://www.hackerrank.com/certificates/a70bc2832786}{
+            \textbf{SQL (Advanced) Certificate}, HackerRank
+        }
+    \end{onecolentry}
+    \end{twocolentry}
+
+    \vspace{0.15 cm}
+    \begin{twocolentry}{June 2022 - December 2022}
+        
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \href{https://drive.google.com/file/d/1Nthcd9QuN2zBc2fYyQrQOFG4pT5AOMTM/view}{\textbf{Web Development Course With React}, Programming Hero}
+    \end{onecolentry}
+    \end{twocolentry}
+
+    \section{PARTICIPATION \& ACHIEVEMENT}
+    \begin{twocolentry}{2020}
+        \textbf{Banglalink SDG Hackathon `Code for a Cause' 2.0}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Participated and developed a digital learning solution idea for rural areas.
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.15 cm}
+    \begin{twocolentry}{2017}
+        \textbf{Intra University Hackathon at IIUC}
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Position: 15th out of 50 teams.
+        \end{highlights}
+    \end{onecolentry}
+
+\end{document}
