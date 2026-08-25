@@ -33,6 +33,9 @@
 \usepackage{needspace}
 \usepackage{iftex}
 
+% Font Awesome
+\usepackage{fontawesome5}
+
 \ifXeTeX
     \usepackage{fontspec}
     \IfFontExistsTF{Inter}{
@@ -176,18 +179,43 @@
 
         \vspace{5 pt}
 
+        % \normalsize
+        % \mbox{Dhaka, Bangladesh |}%
+        % \kern 5.0 pt% \AND\kern 5.0 pt%
+        % \mbox{\hrefWithoutArrow{mailto:irfanchowdhury80@gmail.com}{irfanchowdhury80@gmail.com |}}%
+        % \kern 5.0 pt% \AND\kern 5.0 pt%
+        % \mbox{\hrefWithoutArrow{tel:+8801979498634}{+8801979498634}}%
+        % \par\vspace{1 pt}
+        % \mbox{\hrefWithoutArrow{https://irfan-chowdhury.github.io/}{irfan-chowdhury.github.io |}}%
+        % \kern 5.0 pt% \AND\kern 5.0 pt%
+        % \mbox{\hrefWithoutArrow{https://github.com/Irfan-Chowdhury}{github.com/Irfan-Chowdhury |}}%
+        % \kern 5.0 pt% \AND\kern 5.0 pt%
+        % \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/irfan-chowdhury}{linkedin.com/in/irfan-chowdhury}}%
+
         \normalsize
-        \mbox{Dhaka, Bangladesh |}%
-        \kern 5.0 pt% \AND\kern 5.0 pt%
-        \mbox{\hrefWithoutArrow{mailto:irfanchowdhury80@gmail.com}{irfanchowdhury80@gmail.com |}}%
-        \kern 5.0 pt% \AND\kern 5.0 pt%
-        \mbox{\hrefWithoutArrow{tel:+8801979498634}{+8801979498634}}%
+
+        \mbox{\faMapMarker\ Dhaka, Bangladesh}%
+        \kern 5.0 pt%
+        % \textbar\kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{mailto:irfanchowdhury80@gmail.com}
+            {\faEnvelope\ irfanchowdhury80@gmail.com}}%
+        \kern 5.0 pt%
+        % \textbar\kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+8801979498634}
+            {\faPhone\ +8801979498634}}%
+
         \par\vspace{1 pt}
-        \mbox{\hrefWithoutArrow{https://irfan-chowdhury.github.io/}{irfan-chowdhury.github.io |}}%
-        \kern 5.0 pt% \AND\kern 5.0 pt%
-        \mbox{\hrefWithoutArrow{https://github.com/Irfan-Chowdhury}{github.com/Irfan-Chowdhury |}}%
-        \kern 5.0 pt% \AND\kern 5.0 pt%
-        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/irfan-chowdhury}{linkedin.com/in/irfan-chowdhury}}%
+
+        \mbox{\hrefWithoutArrow{https://irfan-chowdhury.github.io/}
+            {\faGlobe\ irfan-chowdhury.github.io}}%
+        \kern 5.0 pt%
+        % \textbar\kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/Irfan-Chowdhury}
+            {\faGithub\ github.com/Irfan-Chowdhury}}%
+        \kern 5.0 pt%
+        % \textbar\kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/irfan-chowdhury}
+            {\faLinkedin\ linkedin.com/in/irfan-chowdhury}}%
     \end{header}
 
     \vspace{5 pt - 0.2 cm}
@@ -202,8 +230,8 @@
         \end{highlights}
     \end{onecolentry}
 
-    \vspace{0.15 cm}
-    \experienceEntry{Workspace Infotech Ltd.}{Software Engineer}{January 2026 - July 2026}{Dhaka, Bangladesh |}
+    \vspace{0.25 cm}
+    \experienceEntry{Workspace Infotech Ltd.}{Software Engineer}{January 2026 - July 2026}{Dhaka, Bangladesh}
     \begin{onecolentry}
         \begin{highlights}
             \item Built high-performance scraping Queue Jobs for \textbf{2M+ vehicle records}, reducing processing time by \textbf{60\%.}
@@ -212,29 +240,52 @@
         \end{highlights}
     \end{onecolentry}
 
-    \vspace{0.15 cm}
-    \experienceEntry{Bizsoftcare}{Software Engineer}{October 2024 - December 2025}{Chittagong, Bangladesh}
+    % \vspace{0.20 cm}
+    % \experienceEntry{Lion Coders}{Software Engineer}{January 2022 - December 2025}{Chittagong, Bangladesh}
+    % \begin{onecolentry}
+    %     \begin{highlights}
+    %         \item Developed and maintained multi-tenant SaaS HRM (\href{https://peopleprohrm.com/demo/}{PeoplePro}) and e-commerce (\href{https://shuddhokhamar.com}{Shuddho Khamar}) platforms.
+    %         \item Contributed to 500+ script sales with 85\% client satisfaction.
+    %         \item Built Version Elevate package, reducing support load by 60\%.
+    %         \item Optimized queries and fixed complex issues, achieving 30--70\% performance improvement.
+    %         \item Integrated local payment gateway bKash on Shuddho Khamar and Max Technology, as well as PayPal, Stripe, and SSLCommerz.
+    %         \item Actively participated in requirement analysis by thinking from both user and client perspectives to deliver practical and business-oriented solutions.
+    %     \end{highlights}
+    % \end{onecolentry}
+    \vspace{0.25 cm}
+    \experienceEntry{Lion Coders}{Software Engineer}{January 2022 - December 2025}{Chittagong, Bangladesh}
+
     \begin{onecolentry}
         \begin{highlights}
-            \item Collaborated on a scalable e-commerce platform supporting 10K+ users at launch.
-            \item Applied MVC architecture to improve maintainability and scalability.
-            \item Delivered core modules (product, order, payment) for a stable production release.
+
+            \item Developed and maintained \textbf{multi-tenant SaaS HRM}
+            (\href{https://peopleprohrm.com/demo/}{\textbf{\underline{PeoplePro}}})
+            and \textbf{E-commerce}
+            (\href{https://shuddhokhamar.com}{\textbf{\underline{Shuddho Khamar}}} \& \href{https://xenarchs.com/cartpro/}{\textbf{\underline{CartPro}}}) platforms.
+
+            \item Contributed to \textbf{500+ script sales} with
+            \textbf{85\% client satisfaction}.
+
+            \item Built \textbf{Version Elevate} package, reducing
+            support load by \textbf{60\%}.
+
+            \item Optimized queries and fixed complex issues, achieving
+            \textbf{30--70\% performance improvement}.
+
+            \item Integrated local payment gateway \textbf{bKash} on
+            \href{https://shuddhokhamar.com/}{\textbf{Shuddho Khamar}}
+            and \href{https://maxonline.com.bd/}{\textbf{Max Technology}}.
+            Also integrated \textbf{PayPal}, \textbf{Stripe}, and
+            \textbf{SSLCommerz}.
+
+            \item Actively participated in requirement analysis by thinking
+            from both user and client perspectives to deliver practical
+            and business-oriented solutions.
+
         \end{highlights}
     \end{onecolentry}
 
-    \vspace{0.15 cm}
-    \experienceEntry{Lion Coders}{Software Engineer}{January 2022 - September 2024}{Chittagong, Bangladesh}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item Developed and maintained multi-tenant SaaS HRM (\href{https://peopleprohrm.com/demo/}{PeoplePro}) and e-commerce (\href{https://shuddhokhamar.com}{Shuddho Khamar}) platforms.
-            \item Contributed to 500+ script sales with 85\% client satisfaction.
-            \item Built Version Elevate package, reducing support load by 60\%.
-            \item Optimized queries and fixed complex issues, achieving 30--70\% performance improvement.
-            \item Integrated local payment gateway bKash on Shuddho Khamar and Max Technology, as well as PayPal, Stripe, and SSLCommerz.
-            \item Actively participated in requirement analysis by thinking from both user and client perspectives to deliver practical and business-oriented solutions.
-        \end{highlights}
-    \end{onecolentry}
-
+    \vspace{0.20 cm}
     \section{SKILLS}
     \begin{onecolentry}
         \textbf{Languages:} PHP, JavaScript, SQL
@@ -244,53 +295,125 @@
         \textbf{Technologies \& Tools:} Laravel, MySQL, React, jQuery, Ajax, REST API, Bootstrap, PEST, Git, GitHub, Postman, Trello, Jira, cPanel, Plesk
     \end{onecolentry}
 
+    % \vspace{0.20 cm}
+    % \section{PROJECTS}
+    % \begin{twocolentry}{\href{https://peopleprohrm.com}{Demo} \textbar\ \href{https://codecanyon.net/item/peoplepro-hrm-payroll-project-management/29169229?s_rank=5}{CodeCanyon}}
+    %     \textbf{PeoplePro and SaaS}
+    % \end{twocolentry}
+    % \begin{onecolentry}
+    %     \begin{highlights}
+    %         \item Led backend development for the restructured payroll module, integrated IP-based attendance, performance tracking, role permissions, and email and database notifications.
+    %         \item Developed a multi-tenant SaaS version with separate subdomains and databases, improving scalability (\href{https://peopleprohrmsaas.com}{Demo} \textbar\ \href{https://codecanyon.net/item/peoplepro-saas-hrm-payroll-project-management/48966937}{CodeCanyon}).
+    %     \end{highlights}
+    % \end{onecolentry}
+    \vspace{0.20 cm}
+
     \section{PROJECTS}
-    \begin{twocolentry}{\href{https://peopleprohrm.com}{Demo} \textbar\ \href{https://codecanyon.net/item/peoplepro-hrm-payroll-project-management/29169229?s_rank=5}{CodeCanyon}}
-        \textbf{PeoplePro and SaaS}
+
+    \begin{twocolentry}
+    % {
+    %     \href{https://peopleprohrm.com}{\underline{\textit{Demo}}}
+    %     \textbar\
+    %     \href{https://peopleprohrmsaas.com}{\underline{\textit{SaaS}}}
+    %     \textbar\
+    %     \href{https://codecanyon.net/item/peoplepro-hrm-payroll-project-management/29169229?s_rank=5}
+    %     {\underline{\textit{CodeCanyon}}}
+    % }
+
+    \textbf{
+        PeoplePro \href{https://peopleprohrm.com}{\faLink}
+        and SaaS \href{https://peopleprohrmsaas.com}{\faLink}
+    }
     \end{twocolentry}
+
     \begin{onecolentry}
+
         \begin{highlights}
-            \item Led backend development for the restructured payroll module, integrated IP-based attendance, performance tracking, role permissions, and email and database notifications.
-            \item Developed a multi-tenant SaaS version with separate subdomains and databases, improving scalability (\href{https://peopleprohrmsaas.com}{Demo} \textbar\ \href{https://codecanyon.net/item/peoplepro-saas-hrm-payroll-project-management/48966937}{CodeCanyon}).
+
+            \item Led the backend development for the restructured
+            \textbf{payroll module}, \textbf{integrated IP-based attendance},
+            \textbf{performance tracking}, \textbf{role permissions}, and
+            \textbf{email \& db notifications}.
+
+            \item Developed a \textbf{Multi Tenant}
+            \href{https://peopleprohrmsaas.com}{\underline{\textbf{SaaS}}} version with separate subdomains and databases, improving scalability.
+
         \end{highlights}
+
     \end{onecolentry}
 
     \vspace{0.15 cm}
-    \begin{twocolentry}{\href{https://xenarchs.com/cartpro/}{Demo}}
-        \textbf{CartPro}
-    \end{twocolentry}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item Improved backend efficiency by reducing query load by 79\%, response time by 59\%, and memory usage by 13\% through refactoring, caching, indexing, and eager loading.
-            \item Built a versatile shopping platform with Ajax cart, quick search, filters, unlimited colors, and secure Stripe, PayPal, COD, and bKash payment gateways.
-        \end{highlights}
-    \end{onecolentry}
+    \begin{twocolentry}
+    % {
+    %     \href{https://xenarchs.com/cartpro/}{\underline{\textit{Demo}}}
+    % }
 
-    \vspace{0.15 cm}
-    \begin{twocolentry}{\href{https://shuddhokhamar.com/}{Demo}}
-        \textbf{Shuddho Khamar}
+        \textbf{CartPro} \href{https://xenarchs.com/cartpro}{\faLink}
+
     \end{twocolentry}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item Contributed to developing an e-commerce platform for agricultural businesses.
-            \item Implemented Slaughtering Service and bKash payment gateway.
-        \end{highlights}
-    \end{onecolentry}
+
+\begin{onecolentry}
+
+    \begin{highlights}
+
+        \item Improved backend efficiency by reducing
+        \textbf{query load (79\%)}, \textbf{response time (59\%)},
+        and \textbf{memory usage (13\%)}
+        through code refactoring, caching, and query optimization
+        (e.g. database indexing, eager loading).
+
+        \item This versatile platform offers an Ajax cart, quick search,
+        filters and secure payment gateways
+        \textbf{(Stripe, PayPal, COD, bKash)}
+        for a seamless shopping experience.
+
+    \end{highlights}
+
+\end{onecolentry}
+
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}
+%     \href{https://shuddhokhamar.com/}
+%     {\underline{\textit{Demo}}}
+% }
+
+    \textbf{Shuddho Khamar} \href{https://shuddhokhamar.com}{\faLink}
+
+\end{twocolentry}
+
+\begin{onecolentry}
+
+    \begin{highlights}
+
+        \item Contributed to developing an e-commerce platform
+        for agricultural businesses.
+
+        \item Implemented \textbf{Slaughtering Service} and
+        \textbf{bKash} payment gateway.
+
+    \end{highlights}
+
+\end{onecolentry}
+
 
     \section{COMPOSER PACKAGES}
     \begin{onecolentry}
         \begin{highlights}
-            \item \textbf{\href{https://packagist.org/packages/irfan-chowdhury/bkash-tokenized-checkout}{Bkash Tokenized Checkout}} -- Payment gateway solution with Laravel-based application that fits all business needs and enriches the customer's secure online payment experience.
-            \item \textbf{\href{https://packagist.org/packages/irfan-chowdhury/version-elevate}{Version Elevate}} -- Notified clients about new version releases and enabled one-click migration to the latest version, reducing manual upgrade effort by 90\%.
-            \item \textbf{\href{https://packagist.org/packages/irfan-chowdhury/repository-maker}{Laravel Repository Maker}} -- Auto-generate the necessary files for the repository design pattern structure.
+            \item \textbf{Bkash Tokenized Checkout} \href{https://packagist.org/packages/irfan-chowdhury/bkash-tokenized-checkout}{\faLink} -- Payment gateway solution with Laravel-based application that fits all business needs and enriches the customer's secure online payment experience.
+            \item \textbf{Version Elevate}  \href{https://packagist.org/packages/irfan-chowdhury/version-elevate}{\faLink} -- Notified clients about new version releases and enabled one-click migration to the latest version, reducing manual upgrade effort by 90\%.
+            \item \textbf{Laravel Repository Maker} \href{https://packagist.org/packages/irfan-chowdhury/repository-maker}{\faLink} -- Auto-generate the necessary files for the repository design pattern structure.
         \end{highlights}
     \end{onecolentry}
 
+    \vspace{0.15 cm}
     \section{EDUCATION}
     \begin{twocolentry}{2017 - 2022}
-        \textbf{International Islamic University Chittagong (IIUC)}, B.Sc. in Computer Science \& Engineering
+        \textbf{International Islamic University Chittagong (IIUC)}, \\ B.Sc. in Computer Science \& Engineering
     \end{twocolentry}
 
+    \vspace{0.15 cm}
     \section{TRAINING \& CERTIFICATION}
     \begin{twocolentry}{October 2023 - March 2024}
         
@@ -324,6 +447,7 @@
     \end{onecolentry}
     \end{twocolentry}
 
+    \vspace{0.15 cm}
     \section{PARTICIPATION \& ACHIEVEMENT}
     \begin{twocolentry}{2020}
         \textbf{Banglalink SDG Hackathon `Code for a Cause' 2.0}
